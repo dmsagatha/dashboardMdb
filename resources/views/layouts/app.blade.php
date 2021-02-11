@@ -24,27 +24,45 @@
       <div class="container">
         <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-primary">
           <div class="container-fluid">
-            <a class="navbar-brand" href="#">Navbar</a>
+            <a class="navbar-brand" href="#">
+              <img src="images/carita-feliz.gif" height="35" alt="" loading="lazy">
+            </a>
             <button
               class="navbar-toggler"
               type="button"
               data-mdb-toggle="collapse"
-              data-mdb-target="#navbarSupportedContent"
-              aria-controls="navbarSupportedContent"
+              data-mdb-target="#navbarRightAlignExample"
+              aria-controls="navbarRightAlignExample"
               aria-expanded="false"
               aria-label="Toggle navigation"
             >
               <i class="fas fa-bars"></i>
             </button>
             <!-- Collapsible wrapper -->
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <div class="collapse navbar-collapse" id="navbarRightAlignExample">
               <!-- Left links -->
-              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                <!-- Search form -->
+                <form class="d-flex input-group w-auto">
+                  <input
+                    type="search"
+                    class="form-control"
+                    placeholder="Type query"
+                    aria-label="Search"
+                  />
+                  <button
+                    class="btn btn-outline-primary"
+                    type="button"
+                    data-mdb-ripple-color="dark"
+                  >
+                    Search
+                  </button>
+                </form>
                 <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="#">Home</a>
+                  <a class="nav-link active" aria-current="page" href="#">Inicio</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#">Link</a>
+                  <a class="nav-link" href="#">Enlace</a>
                 </li>
                 <!-- Navbar dropdown -->
                 <li class="nav-item dropdown">
@@ -56,22 +74,17 @@
                     data-mdb-toggle="dropdown"
                     aria-expanded="false"
                   >
-                    Dropdown
+                    Desplegable
                   </a>
                   <!-- Dropdown menu -->
                   <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <li><a class="dropdown-item" href="#">Action</a></li>
-                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                    <li><a class="dropdown-item" href="#">Acción</a></li>
+                    <li><a class="dropdown-item" href="#">Otra acción</a></li>
                     <li><hr class="dropdown-divider" /></li>
                     <li>
-                      <a class="dropdown-item" href="#">Something else here</a>
+                      <a class="dropdown-item" href="#">Algo mas aqui</a>
                     </li>
                   </ul>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true"
-                    >Disabled</a
-                  >
                 </li>
                 <!-- Avatar -->
                 <li class="nav-item dropdown">
@@ -92,36 +105,23 @@
                     />
                   </a>
                   <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                    <li><a class="dropdown-item" href="#">My profile</a></li>
-                    <li><a class="dropdown-item" href="#">Settings</a></li>
-                    <li><a class="dropdown-item" href="#">Logout</a></li>
+                    <li><a class="dropdown-item" href="#">Mi perfil</a></li>
+                    <li><a class="dropdown-item" href="#">Configuraciones</a></li>
+                    <li><a class="dropdown-item" href="#">Cerrar sesión</a></li>
                   </ul>
                 </li>
-              </ul>
-              <!-- Left links -->
-              <!-- Search form -->
-              <form class="d-flex input-group w-auto">
-                <input
-                  type="search"
-                  class="form-control"
-                  placeholder="Type query"
-                  aria-label="Search"
-                />
-                <button
-                  class="btn btn-outline-primary"
-                  type="button"
-                  data-mdb-ripple-color="dark"
-                >
-                  Search
-                </button>
-              </form>
+                <li class="nav-item">
+                  <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true"
+                    >Deshabilitado</a
+                  >
+                </li>
+              </ul><!-- Left links -->
             </div>
             <!-- Collapsible wrapper -->
           </div>
           <!-- Container wrapper -->
         </nav>
-      </div>
-      <!-- Navbar -->
+      </div><!-- Navbar -->
     </header>
 
     <main class="mt-5">
@@ -204,7 +204,7 @@
             </div>
           </div>
         </div>
-      </div>
+      </div><!-- Container -->
     </main>
 
     <footer class="bg-primary text-white text-center text-lg-start">
