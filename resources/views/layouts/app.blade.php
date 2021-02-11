@@ -86,6 +86,11 @@
                     </li>
                   </ul>
                 </li>
+                <li class="nav-item">
+                  <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true"
+                    >Deshabilitado</a
+                  >
+                </li>
                 <!-- Avatar -->
                 <li class="nav-item dropdown">
                   <a
@@ -104,16 +109,11 @@
                       loading="lazy"
                     />
                   </a>
-                  <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                  <ul class="dropdown-menu dropdown-menu-lg-end" aria-labelledby="navbarDropdownMenuLink">
                     <li><a class="dropdown-item" href="#">Mi perfil</a></li>
                     <li><a class="dropdown-item" href="#">Configuraciones</a></li>
                     <li><a class="dropdown-item" href="#">Cerrar sesión</a></li>
                   </ul>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true"
-                    >Deshabilitado</a
-                  >
                 </li>
               </ul><!-- Left links -->
             </div>
