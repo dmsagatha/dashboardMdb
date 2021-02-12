@@ -8,124 +8,34 @@
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <link rel="icon" href="{{ asset('images/favicon-32x32.png') }}">
+    <link rel="icon" href="{{ asset('images/favicon.ico') }}">
 
-    <title>{{ config('app.name', 'Laravel Livewire') }}</title>
+    <title>{{ config('app.name', 'Laravel') }}</title>
     
-    <!-- Google Fonts Roboto -->
+    <!-- Google Fonts Roboto --><!-- Font Awesome -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" />
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/styles.css') }}" rel="stylesheet">
   </head>
   <body>
     <header>
-      <!-- Navbar -->
-      <div class="container">
-        <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-primary">
-          <div class="container-fluid">
-            <a class="navbar-brand" href="#">
-              <img src="images/carita-feliz.gif" height="35" alt="" loading="lazy">
-            </a>
-            <button
-              class="navbar-toggler"
-              type="button"
-              data-mdb-toggle="collapse"
-              data-mdb-target="#navbarRightAlignExample"
-              aria-controls="navbarRightAlignExample"
-              aria-expanded="false"
-              aria-label="Toggle navigation"
-            >
-              <i class="fas fa-bars"></i>
-            </button>
-            <!-- Collapsible wrapper -->
-            <div class="collapse navbar-collapse" id="navbarRightAlignExample">
-              <!-- Left links -->
-              <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                <!-- Search form -->
-                <form class="d-flex input-group w-auto">
-                  <input
-                    type="search"
-                    class="form-control"
-                    placeholder="Type query"
-                    aria-label="Search"
-                  />
-                  <button
-                    class="btn btn-outline-primary"
-                    type="button"
-                    data-mdb-ripple-color="dark"
-                  >
-                    Search
-                  </button>
-                </form>
-                <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="#">Inicio</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Enlace</a>
-                </li>
-                <!-- Navbar dropdown -->
-                <li class="nav-item dropdown">
-                  <a
-                    class="nav-link dropdown-toggle"
-                    href="#"
-                    id="navbarDropdown"
-                    role="button"
-                    data-mdb-toggle="dropdown"
-                    aria-expanded="false"
-                  >
-                    Desplegable
-                  </a>
-                  <!-- Dropdown menu -->
-                  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <li><a class="dropdown-item" href="#">Acción</a></li>
-                    <li><a class="dropdown-item" href="#">Otra acción</a></li>
-                    <li><hr class="dropdown-divider" /></li>
-                    <li>
-                      <a class="dropdown-item" href="#">Algo mas aqui</a>
-                    </li>
-                  </ul>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true"
-                    >Deshabilitado</a
-                  >
-                </li>
-                <!-- Avatar -->
-                <li class="nav-item dropdown">
-                  <a
-                    class="nav-link dropdown-toggle d-flex align-items-center"
-                    href="#"
-                    id="navbarDropdownMenuLink"
-                    role="button"
-                    data-mdb-toggle="dropdown"
-                    aria-expanded="false"
-                  >
-                    <img
-                      src="https://mdbootstrap.com/img/Photos/Avatars/img (31).jpg"
-                      class="rounded-circle"
-                      height="22"
-                      alt=""
-                      loading="lazy"
-                    />
-                  </a>
-                  <ul class="dropdown-menu dropdown-menu-lg-end" aria-labelledby="navbarDropdownMenuLink">
-                    <li><a class="dropdown-item" href="#">Mi perfil</a></li>
-                    <li><a class="dropdown-item" href="#">Configuraciones</a></li>
-                    <li><a class="dropdown-item" href="#">Cerrar sesión</a></li>
-                  </ul>
-                </li>
-              </ul><!-- Left links -->
-            </div>
-            <!-- Collapsible wrapper -->
-          </div>
-          <!-- Container wrapper -->
-        </nav>
-      </div><!-- Navbar -->
+      @include('layouts.includes.templates._header')
     </header>
 
+    <div id="SideNavID" class="sideNavClose mt-5">
+      <a class="nav-link" href=""><i class="fa mr-2 fa-home"></i>Inicio</a>
+      <a class="nav-link" href=""><i class="fa mr-2 fa-home"></i>Inicio</a>
+      <a class="nav-link" href=""><i class="fa mr-2 fa-home"></i>Inicio</a>
+      <a class="nav-link" href=""><i class="fa mr-2 fa-home"></i>Inicio</a>
+      <a class="nav-link" href=""><i class="fa mr-2 fa-home"></i>Inicio</a>
+    </div>
+
+    <div id="ContentOverlayID" class="ContentOverlayClose"></div>
+
     <main class="mt-5">
-      <div class="container">
+      <div class="container">  
         <div class="row mb-4">
           <div class="col-md-6">
             <img src="https://mdbootstrap.com/img/Photos/Slides/img%20(15).jpg" class="img-fluid shadow-5 rounded" alt="">
@@ -138,7 +48,7 @@
             </p>
           </div>
         </div>
-
+      
         <div class="row mb-4">
           <div class="col-lg-4 col-md-12">
             <div class="card">
@@ -207,78 +117,50 @@
       </div><!-- Container -->
     </main>
 
-    <footer class="bg-primary text-white text-center text-lg-start">
-      <!-- Grid container -->
-      <div class="container p-4">
-        <!--Grid row-->
-        <div class="row">
-          <!--Grid column-->
-          <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
-            <h5 class="text-uppercase">Footer Content</h5>
-    
-            <p>
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste atque ea quis
-              molestias. Fugiat pariatur maxime quis culpa corporis vitae repudiandae aliquam
-              voluptatem veniam, est atque cumque eum delectus sint!
-            </p>
-          </div>
-          <!--Grid column-->
-    
-          <!--Grid column-->
-          <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-            <h5 class="text-uppercase">Links</h5>
-    
-            <ul class="list-unstyled mb-0">
-              <li>
-                <a href="#!" class="text-white">Link 1</a>
-              </li>
-              <li>
-                <a href="#!" class="text-white">Link 2</a>
-              </li>
-              <li>
-                <a href="#!" class="text-white">Link 3</a>
-              </li>
-              <li>
-                <a href="#!" class="text-white">Link 4</a>
-              </li>
-            </ul>
-          </div>
-          <!--Grid column-->
-    
-          <!--Grid column-->
-          <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-            <h5 class="text-uppercase mb-0">Links</h5>
-    
-            <ul class="list-unstyled">
-              <li>
-                <a href="#!" class="text-white">Link 1</a>
-              </li>
-              <li>
-                <a href="#!" class="text-white">Link 2</a>
-              </li>
-              <li>
-                <a href="#!" class="text-white">Link 3</a>
-              </li>
-              <li>
-                <a href="#!" class="text-white">Link 4</a>
-              </li>
-            </ul>
-          </div>
-          <!--Grid column-->
-        </div>
-        <!--Grid row-->
-      </div>
-      <!-- Grid container -->
-    
-      <!-- Copyright -->
-      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
-        © 2020 Copyright:
-        <a class="text-white" href="https://mdbootstrap.com/">MDBootstrap.com</a>
-      </div>
-      <!-- Copyright -->
-    </footer>
+    @include('layouts.includes.templates._footer')
 
     <!-- JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="{{ asset('js/app.js') }}" defer></script>
+
+    <script type="text/javascript">
+      $('#NavMenuBar').click(function() {
+        let SideNavID = $('#SideNavID');
+        let ContentOverlayID = $('#ContentOverlayID');
+
+        if (SideNavID.hasClass('sideNavClose')) {
+          SideNavID.removeClass('sideNavClose')
+          SideNavID.addClass('sideNavOpen')
+
+          ContentOverlayID.removeClass('ContentOverlayClose')
+          ContentOverlayID.addClass('ContentOverlay')
+        } else {
+          SideNavID.removeClass('sideNavOpen')
+          SideNavID.addClass('sideNavClose')
+
+          ContentOverlayID.removeClass('ContentOverlay')
+          ContentOverlayID.addClass('ContentOverlayClose')
+        }
+      });
+
+      $('#ContentOverlayID').click(function() {
+        let SideNavID = $('#SideNavID');
+        let ContentOverlayID = $('#ContentOverlayID');
+
+        if (SideNavID.hasClass('sideNavClose')) {
+          SideNavID.removeClass('sideNavClose')
+          SideNavID.addClass('sideNavOpen')
+
+          ContentOverlayID.removeClass('ContentOverlayClose')
+          ContentOverlayID.addClass('ContentOverlay')
+        } else {
+          SideNavID.removeClass('sideNavOpen')
+          SideNavID.addClass('sideNavClose')
+
+          ContentOverlayID.removeClass('ContentOverlay')
+          ContentOverlayID.addClass('ContentOverlayClose')
+        }
+      });
+    </script>
   </body>
 </html>

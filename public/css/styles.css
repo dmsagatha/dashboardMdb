@@ -1,0 +1,52 @@
+.navbar-brand {
+  font-size: 24px !important;
+}
+
+.sideNavOpen {
+  height: 100%;
+  width: 220px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  overflow-x: hidden;
+  padding-left: 10px;
+  padding-top: 20px;
+  -webkit-transition: 0.1s;
+  transition: 0.1s;
+  background-color: #fe0a52;
+}
+
+.sideNavClose {
+  height: 100%;
+  width: 0px;
+  visibility: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  overflow-x: hidden;
+  padding-left: 10px;
+  padding-top: 20px;
+  -webkit-transition: 0.1s;
+  transition: 0.1s;
+  background-color: #fe0a52;
+}
+
+.ContentOverlay {
+  display: block;
+  position: fixed;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 7;
+  right: 0;
+  bottom: 0;
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.ContentOverlayClose {
+  display: none;
+}
+/*# sourceMappingURL=styles.css.map */

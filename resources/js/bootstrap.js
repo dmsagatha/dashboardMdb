@@ -6,7 +6,14 @@ window._ = require('lodash');
  * CSRF token as a header based on the value of the "XSRF" token cookie.
  */
 
-require('mdb-ui-kit'); // lib
+
+try {
+    //window.Popper = require('popper.js').default;
+    window.$ = window.jQuery = require('jquery');
+
+    //require('bootstrap');
+    require('mdb-ui-kit'); // lib
+} catch (e) {}
 
 window.axios = require('axios');
 
