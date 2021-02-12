@@ -8,7 +8,7 @@
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <link rel="icon" href="{{ asset('images/favicon.ico') }}">
+    <link rel="icon" href="{{ asset('img/favicon.ico') }}">
 
     <title>{{ config('app.name', 'Laravel') }}</title>
     
@@ -25,11 +25,10 @@
     </header>
 
     <div id="SideNavID" class="sideNavClose mt-5">
-      <a class="nav-link" href=""><i class="fa mr-2 fa-home"></i>Inicio</a>
-      <a class="nav-link" href=""><i class="fa mr-2 fa-home"></i>Inicio</a>
-      <a class="nav-link" href=""><i class="fa mr-2 fa-home"></i>Inicio</a>
-      <a class="nav-link" href=""><i class="fa mr-2 fa-home"></i>Inicio</a>
-      <a class="nav-link" href=""><i class="fa mr-2 fa-home"></i>Inicio</a>
+      <a class="nav-menu-item" href="#"><i class="fa m-2 fa-home"></i><span class="menuText d-none">Inicio</span></a><br>
+      <a class="nav-menu-item" class="nav-link" href="#"><i class="fa m-2 fa-envelope"></i><span class="menuText d-none">Contacto</span></a><br>
+      <a class="nav-menu-item" href="#"><i class="fa m-2 fa-question-circle"></i><span class="menuText d-none">Acerca</span></a><br>
+      <a class="nav-menu-item" href="#"><i class="fa m-2 fa-globe"></i><span class="menuText d-none">Configuraciones</span></a><br>
     </div>
 
     <div id="ContentOverlayID" class="ContentOverlayClose"></div>
@@ -124,20 +123,51 @@
     <script src="{{ asset('js/app.js') }}" defer></script>
 
     <script type="text/javascript">
-      $('#NavMenuBar').click(function() {
+      $('#NavMenuBar').click(function () {
+        SideMenuOpenClose();
+      });
+  
+      $('#ContentOverlayID').click(function () {
+        SideMenuOpenClose();
+      });
+
+      function SideMenuOpenClose() {
         let SideNavID = $('#SideNavID');
         let ContentOverlayID = $('#ContentOverlayID');
+        let menuText =$('.menuText');
+
+        if (SideNavID.hasClass('sideNavClose')) {
+            SideNavID.removeClass('sideNavClose')
+            SideNavID.addClass('sideNavOpen')
+            menuText.removeClass('d-none');
+            ContentOverlayID.removeClass('ContentOverlayClose')
+            ContentOverlayID.addClass('ContentOverlay')
+        } else {
+            SideNavID.removeClass('sideNavOpen')
+            SideNavID.addClass('sideNavClose')
+            menuText.addClass('d-none');
+            ContentOverlayID.removeClass('ContentOverlay')
+            ContentOverlayID.addClass('ContentOverlayClose')
+        }
+      }
+
+      /* $('#NavMenuBar').click(function() {
+        let SideNavID = $('#SideNavID');
+        let ContentOverlayID = $('#ContentOverlayID');
+        let menuText = $('.menuText');
 
         if (SideNavID.hasClass('sideNavClose')) {
           SideNavID.removeClass('sideNavClose')
           SideNavID.addClass('sideNavOpen')
 
+          menuText.removeClass('d-none');
           ContentOverlayID.removeClass('ContentOverlayClose')
           ContentOverlayID.addClass('ContentOverlay')
         } else {
           SideNavID.removeClass('sideNavOpen')
           SideNavID.addClass('sideNavClose')
 
+          menuText.addClass('d-none');
           ContentOverlayID.removeClass('ContentOverlay')
           ContentOverlayID.addClass('ContentOverlayClose')
         }
@@ -160,7 +190,7 @@
           ContentOverlayID.removeClass('ContentOverlay')
           ContentOverlayID.addClass('ContentOverlayClose')
         }
-      });
+      }); */
     </script>
   </body>
 </html>
