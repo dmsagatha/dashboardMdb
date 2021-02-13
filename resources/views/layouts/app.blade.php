@@ -17,128 +17,148 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/styles.css') }}" rel="stylesheet">
+
+    <style>
+      .sideNav {
+        height: 100vh;
+        width: 0;
+        position: fixed;
+        z-index: 10;
+        top: 40px;
+        left: 0;
+        background-color: rgb(46, 218, 195);
+        overflow-x: hidden;
+        padding-top: 60px;
+        transition: 0.5s;
+      }
+
+      .sideNav a {
+        padding: 8px 8px 8px 32px;
+        text-decoration: none;
+        font-size: 25px;
+        color: #000000;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        display: block;
+        transition: 0.3s;
+      }
+      .sidenav a:hover {
+        color: #f1f1f1;
+      }
+      .sideNav .closeBtn {
+        position: absolute;
+        top: 0;
+        right: 25px;
+        font-size: 36px;
+        margin-left: 50px;
+      }
+      button {
+        padding: 15px;
+        background-color: rgb(0, 27, 145);
+        color: rgb(255, 255, 255);
+        font-size: 20px;
+        border: none;
+        border-radius: 2%;
+      }
+      .main-content {
+        transition: 0.5s;
+      }
+    </style>
   </head>
   <body>
     <header>
       @include('layouts.includes.templates._header')
     </header>
+    
+    <nav class="sideNav">
+      <a href="#" class="closeBtn">&times;</a>
+      <a href="#">Login</a>
+      <a href="#">Register</a>
+      <a href="#">Home</a>
+      <a href="#">About Us</a>
+    </nav>
 
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-2 sidebar" id="sideLateral">
-          <ul class="list-group list-group-flush">
-            <li class="list-group-item active" aria-current="true">Dashboard</li>
-            <li class="list-group-item">Inicio</li>
-            <li class="list-group-item">Usuarios</li>
-            <li class="list-group-item">Contacto</li>
-            <li class="list-group-item">
-              <a href="#" class="nav-link dropdown-toggle text-light pl-4" id="navbarDropdown" role="button" data-mdb-toggle="dropdown" aria-expanded="false">Configuraciones</a>
-              <ul class="dropdown-menu w-100" aria-labelledby="navbarDropdown">
-                <li><a class="dropdown-item text-light pl-4 p-2" href="#">Action</a></li>
-                <li><a class="dropdown-item text-light pl-4 p-2" href="#">Another action</a></li>
-                <li><hr class="dropdown-divider" /></li>
-                <li>
-                  <a class="dropdown-item text-light pl-4 p-2" href="#">Something else here</a>
-                </li>
-              </ul>
-            </li>
-            <li class="list-group-item">Inicio</li>
-            <li class="list-group-item">Usuarios</li>
-            <li class="list-group-item">Contacto</li>
-            <li class="list-group-item">Configuraciones</li>
-            <li class="list-group-item">Inicio</li>
-            <li class="list-group-item">Usuarios</li>
-            <li class="list-group-item">Contacto</li>
-            <li class="list-group-item">configuraciones</li>
-            <li class="list-group-item">Inicio</li>
-            <li class="list-group-item">Usuarios</li>
-            <li class="list-group-item">Contacto</li>
-            <li class="list-group-item">Configuraciones</li>
-          </ul>
+    <main class="main-content mt-5">
+      <div class="container">  
+        <div class="row mb-4">
+          <div class="col-md-6">
+            <img src="https://mdbootstrap.com/img/Photos/Slides/img%20(15).jpg" class="img-fluid shadow-5 rounded" alt="">
+          </div>
+          <div class="col-md-6">
+            <h1>Esta es la primera página</h1>
+            <hr>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem nesciunt aperiam assumenda dolores expedita autem veritatis distinctio vitae, dignissimos optio vel, quidem corrupti corporis aspernatur a. Excepturi dolore itaque illo.
+            </p>
+          </div>
         </div>
-
-        <div class="col-10 main-content mt-5 my-container">
-          <div class="row mb-4">
-            <div class="col-md-6">
-              <img src="https://mdbootstrap.com/img/Photos/Slides/img%20(15).jpg" class="img-fluid shadow-5 rounded" alt="">
-            </div>
-            <div class="col-md-6">
-              <h1>Esta es la primera página</h1>
-              <hr>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem nesciunt aperiam assumenda dolores expedita autem veritatis distinctio vitae, dignissimos optio vel, quidem corrupti corporis aspernatur a. Excepturi dolore itaque illo.
-              </p>
+      
+        <div class="row mb-4">
+          <div class="col-lg-4 col-md-12">
+            <div class="card">
+              <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+                <img
+                  src="https://mdbootstrap.com/img/new/standard/nature/111.jpg"
+                  class="img-fluid"
+                />
+                <a href="#!">
+                  <div class="mask" style="background-color: rgba(251, 251, 251, 0.15)"></div>
+                </a>
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">
+                  Some quick example text to build on the card title and make up the bulk of the
+                  card's content.
+                </p>
+                <a href="#!" class="btn btn-primary">Button</a>
+              </div>
             </div>
           </div>
-        
-          <div class="row mb-4">
-            <div class="col-lg-4 col-md-12">
-              <div class="card">
-                <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-                  <img
-                    src="https://mdbootstrap.com/img/new/standard/nature/111.jpg"
-                    class="img-fluid"
-                  />
-                  <a href="#!">
-                    <div class="mask" style="background-color: rgba(251, 251, 251, 0.15)"></div>
-                  </a>
-                </div>
-                <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">
-                    Some quick example text to build on the card title and make up the bulk of the
-                    card's content.
-                  </p>
-                  <a href="#!" class="btn btn-primary">Button</a>
-                </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="card">
+              <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+                <img
+                  src="https://mdbootstrap.com/img/new/standard/nature/112.jpg"
+                  class="img-fluid"
+                />
+                <a href="#!">
+                  <div class="mask" style="background-color: rgba(251, 251, 251, 0.15)"></div>
+                </a>
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">
+                  Some quick example text to build on the card title and make up the bulk of the
+                  card's content.
+                </p>
+                <a href="#!" class="btn btn-primary">Button</a>
               </div>
             </div>
-            <div class="col-lg-4 col-md-6">
-              <div class="card">
-                <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-                  <img
-                    src="https://mdbootstrap.com/img/new/standard/nature/112.jpg"
-                    class="img-fluid"
-                  />
-                  <a href="#!">
-                    <div class="mask" style="background-color: rgba(251, 251, 251, 0.15)"></div>
-                  </a>
-                </div>
-                <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">
-                    Some quick example text to build on the card title and make up the bulk of the
-                    card's content.
-                  </p>
-                  <a href="#!" class="btn btn-primary">Button</a>
-                </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="card">
+              <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+                <img
+                  src="https://mdbootstrap.com/img/new/standard/nature/113.jpg"
+                  class="img-fluid"
+                />
+                <a href="#!">
+                  <div class="mask" style="background-color: rgba(251, 251, 251, 0.15)"></div>
+                </a>
               </div>
-            </div>
-            <div class="col-lg-4 col-md-6">
-              <div class="card">
-                <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-                  <img
-                    src="https://mdbootstrap.com/img/new/standard/nature/113.jpg"
-                    class="img-fluid"
-                  />
-                  <a href="#!">
-                    <div class="mask" style="background-color: rgba(251, 251, 251, 0.15)"></div>
-                  </a>
-                </div>
-                <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">
-                    Some quick example text to build on the card title and make up the bulk of the
-                    card's content.
-                  </p>
-                  <a href="#!" class="btn btn-primary">Button</a>
-                </div>
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">
+                  Some quick example text to build on the card title and make up the bulk of the
+                  card's content.
+                </p>
+                <a href="#!" class="btn btn-primary">Button</a>
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </div>
+      </div><!-- Container -->
+    </main>
 
     @include('layouts.includes.templates._footer')
 
@@ -146,13 +166,22 @@
     <script src="{{ asset('js/app.js') }}" defer></script>
 
     <script>
-      var menuBtn = document.querySelector("#menuBtn")
-      var sideLateral = document.querySelector("#sideLateral")
-      var container = document.querySelector(".my-container")
-      menuBtn.addEventListener("click", () => {
-        sideLateral.classList.toggle("active-nav")
-        container.classList.toggle("active-cont")
-      })
-    </script>
+      let openBtn = document.querySelector(".openSideNav");
+      openBtn.addEventListener("click", () => {
+      showNav();
+      });
+      let closeBtn = document.querySelector(".closeBtn");
+      closeBtn.addEventListener("click", () => {
+      hideNav();
+      });
+      function showNav() {
+      document.querySelector(".sideNav").style.width = "300px";
+      document.querySelector('.main-content').style.marginLeft = "300px";
+      }
+      function hideNav() {
+      document.querySelector(".sideNav").style.width = "0";
+      document.querySelector('.main-content').style.marginLeft = "0px";
+      }
+      </script>
   </body>
 </html>
