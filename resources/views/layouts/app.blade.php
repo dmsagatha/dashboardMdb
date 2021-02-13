@@ -16,42 +16,9 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/styles.css') }}" rel="stylesheet">
 
     <style>
-      .sideNav {
-        height: 100vh;
-        width: 0;
-        position: fixed;
-        z-index: 10;
-        top: 40px;
-        left: 0;
-        background-color: rgb(46, 218, 195);
-        overflow-x: hidden;
-        padding-top: 60px;
-        transition: 0.5s;
-      }
-
-      .sideNav a {
-        padding: 8px 8px 8px 32px;
-        text-decoration: none;
-        font-size: 25px;
-        color: #000000;
-        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-        display: block;
-        transition: 0.3s;
-      }
-      .sidenav a:hover {
-        color: #f1f1f1;
-      }
-      .sideNav .closeBtn {
-        position: absolute;
-        top: 0;
-        right: 25px;
-        font-size: 36px;
-        margin-left: 50px;
-      }
-      button {
+      /* button {
         padding: 15px;
         background-color: rgb(0, 27, 145);
         color: rgb(255, 255, 255);
@@ -61,20 +28,105 @@
       }
       .main-content {
         transition: 0.5s;
+      } */
+
+
+      .nav__links {
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 2;
+        height: 100vh;
+        width: 250px;
+        background: #ffffff;
+        transform: translateX(-250px);
+        transition: transform 0.3s;
+      }
+
+      .nav--open .nav__links {
+        transform: translateX(0);
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+      }
+
+      .nav__link {
+        display: flex;
+        align-items: center;
+        color: #666666;
+        font-weight: bold;
+        font-size: 14px;
+        text-decoration: none;
+        padding: 12px 15px;
+        background: transform 0.2s;
+      }
+
+      .nav__link > i {
+        margin-right: 15px;
+      }
+
+      .nav__link--active {
+        color: #009578;
+      }
+
+      .nav__link--active,
+      .nav__link:hover {
+        background: #eeeeee;
+      }
+
+      .nav__overlay {
+        position: fixed;  /* Parte superior del contenido de la página */
+        top: 0;
+        left: 0;
+        width: 100vh;      /* Ancho completo o 100% */
+        height: 100vh;     /* Altura completa o 100% */
+        background-color: rgba(0,0,0,0.5); /* Fondo negro con opacidad */
+        background-filter: blur(2px);
+        visibility: hidden;   /* Oculto por defecto */
+        opacity: 0;
+        /* z-index: 2; Orden de pila en caso de que esté usando un orden diferente para otros elementos */
+        cursor: pointer; /* Puntero al pasar el mouse */
+        transition: opacity 0.3s;
+      }
+
+      .nav--open .nav__links {
+        visibility: visible;
+        opacity: 1;
       }
     </style>
   </head>
   <body>
-    <header>
+    {{-- <header>
       @include('layouts.includes.templates._header')
+    </header> --}}
+    <header class="header">
+      <button class="header__button" id="btnNav" type="button">
+          <i class="material-icons">menu</i>
+      </button>
     </header>
     
-    <nav class="sideNav">
-      <a href="#" class="closeBtn">&times;</a>
-      <a href="#">Login</a>
-      <a href="#">Register</a>
-      <a href="#">Home</a>
-      <a href="#">About Us</a>
+    <nav class="nav">
+      <div class="nav__links">
+        <a href="#" class="nav__link">
+            <i class="fa fa-user"></i>
+            Dashboard
+        </a>
+        <a class="nav__link nav__link--active" href="#">
+            <i class="fa fa-user"></i>
+            Projects
+        </a>
+        <a class="nav__link" href="#">
+            <i class="fa fa-user"></i>
+            Security
+        </a>
+        <a class="nav__link" href="#">
+            <i class="fa fa-user"></i>
+            History
+        </a>
+        <a class="nav__link" href="#">
+            <i class="fa fa-user"></i>
+            Profile
+        </a>
+      </div>
+      <div class="nav__overlay"></div>
     </nav>
 
     <main class="main-content mt-5">
@@ -166,25 +218,17 @@
     <script src="{{ asset('js/app.js') }}" defer></script>
 
     <script>
-      let openBtn = document.querySelector(".openSideNav");
-      openBtn.addEventListener("click", () => {
-        showNav();
+      document.addEventListener("DOMContentLoaded", () => {
+        const nav = document.querySelector(".nav");
+
+        document.querySelector("#btnNav").addEventListener("click", () => {
+          nav.classList.add("nav--open");
+        });
+
+        document.querySelector(".nav__overlay").addEventListener("click", () => {
+          nav.classList.add("nav--open");
+        });
       });
-
-      let closeBtn = document.querySelector(".closeBtn");
-        closeBtn.addEventListener("click", () => {
-          hideNav();
-      });
-
-      function showNav() {
-        document.querySelector(".sideNav").style.width = "300px";
-        document.querySelector('.main-content').style.marginLeft = "300px";
-      }
-
-      function hideNav() {
-        document.querySelector(".sideNav").style.width = "0";
-        document.querySelector('.main-content').style.marginLeft = "0px";
-      }
     </script>
   </body>
 </html>
