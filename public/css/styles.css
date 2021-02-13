@@ -2,6 +2,10 @@
   font-size: 24px !important;
 }
 
+.navbar-brand ~ .sidebar {
+  visibility: hidden;
+}
+
 .sidebar {
   height: 100%;
   width: 200px;
