@@ -25,13 +25,27 @@
 
     <div class="container-fluid">
       <div class="row">
-        <div class="col-2 sidebar">
+        <div class="col-2 sidebar" id="sideLateral">
           <ul class="list-group list-group-flush">
             <li class="list-group-item active" aria-current="true">Dashboard</li>
             <li class="list-group-item">Inicio</li>
             <li class="list-group-item">Usuarios</li>
             <li class="list-group-item">Contacto</li>
-            <li class="list-group-item">configuraciones</li>
+            <li class="list-group-item">
+              <a href="#" class="nav-link dropdown-toggle text-light pl-4" id="navbarDropdown" role="button" data-mdb-toggle="dropdown" aria-expanded="false">Configuraciones</a>
+              <ul class="dropdown-menu w-100" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item text-light pl-4 p-2" href="#">Action</a></li>
+                <li><a class="dropdown-item text-light pl-4 p-2" href="#">Another action</a></li>
+                <li><hr class="dropdown-divider" /></li>
+                <li>
+                  <a class="dropdown-item text-light pl-4 p-2" href="#">Something else here</a>
+                </li>
+              </ul>
+            </li>
+            <li class="list-group-item">Inicio</li>
+            <li class="list-group-item">Usuarios</li>
+            <li class="list-group-item">Contacto</li>
+            <li class="list-group-item">Configuraciones</li>
             <li class="list-group-item">Inicio</li>
             <li class="list-group-item">Usuarios</li>
             <li class="list-group-item">Contacto</li>
@@ -39,15 +53,11 @@
             <li class="list-group-item">Inicio</li>
             <li class="list-group-item">Usuarios</li>
             <li class="list-group-item">Contacto</li>
-            <li class="list-group-item">configuraciones</li>
-            <li class="list-group-item">Inicio</li>
-            <li class="list-group-item">Usuarios</li>
-            <li class="list-group-item">Contacto</li>
-            <li class="list-group-item">configuraciones</li>
+            <li class="list-group-item">Configuraciones</li>
           </ul>
         </div>
 
-        <div class="col-10 main-content mt-5">
+        <div class="col-10 main-content mt-5 my-container">
           <div class="row mb-4">
             <div class="col-md-6">
               <img src="https://mdbootstrap.com/img/Photos/Slides/img%20(15).jpg" class="img-fluid shadow-5 rounded" alt="">
@@ -218,7 +228,14 @@
     <!-- JavaScript -->
     <script src="{{ asset('js/app.js') }}" defer></script>
 
-    {{-- <script>
-    </script> --}}
+    <script>
+      var menuBtn = document.querySelector("#menuBtn")
+      var sideLateral = document.querySelector("#sideLateral")
+      var container = document.querySelector(".my-container")
+      menuBtn.addEventListener("click", () => {
+        sideLateral.classList.toggle("active-nav")
+        container.classList.toggle("active-cont")
+      })
+    </script>
   </body>
 </html>

@@ -1,7 +1,7 @@
 <div class="container">
   <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-primary">
     <div class="container-fluid">
-      <a id="menu-btn" class="navbar-brand" href="#"><i class="fas fa-bars"></i></a>
+      <a id="menuBtn" class="navbar-brand" href="#"><i class="fas fa-bars"></i></a>
       <button
         class="navbar-toggler"
         type="button"
