@@ -19,7 +19,14 @@
 
     <style>
       .navbar-brand {
-        font-size: 30px !important;
+        font-family: 'Font Awesome 5 Free';
+        font-weight: 700;
+        font-size: 1.5rem;
+        cursor: pointer;
+      }
+      
+      .navbar-brand:before {
+        content: "\f03a";
       }
 
       .main-content {
@@ -71,7 +78,7 @@
         background: #eeeeee;
       }
 
-      .nav__overlay {
+      .overlay {
         position: fixed;  /* Parte superior del contenido de la página */
         top: 0;
         left: 0;
@@ -83,10 +90,11 @@
         opacity: 0;
         z-index: 1; /* Orden de pila en caso de que esté usando un orden diferente para otros elementos */
         cursor: pointer; /* Puntero al pasar el mouse */
-        transition: opacity 0.3s;
+        /* transition: opacity 0.3s; */
+        transition: all 0.5s ease-in-out;
       }
 
-      .nav--open .nav__overlay {
+      .nav--open .overlay {
         visibility: visible;
         opacity: 1;
       }
@@ -115,7 +123,7 @@
           <i class="fa fa-user"></i>Profile
         </a>
       </div>
-      <div class="nav__overlay"></div>
+      <div class="overlay"></div>
     </nav>
 
     <main class="main-content mt-5">
@@ -219,7 +227,7 @@
           nav.classList.add("nav--open");
         });
 
-        document.querySelector(".nav__overlay").addEventListener("click", () => {
+        document.querySelector(".overlay").addEventListener("click", () => {
           nav.classList.remove("nav--open");
         });
       });
