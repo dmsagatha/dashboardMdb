@@ -18,22 +18,21 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
     <style>
-      /* button {
-        padding: 15px;
-        background-color: rgb(0, 27, 145);
-        color: rgb(255, 255, 255);
-        font-size: 20px;
-        border: none;
-        border-radius: 2%;
+      .navbar-brand {
+        font-size: 30px !important;
       }
+
       .main-content {
         transition: 0.5s;
-      } */
+      }
 
-
+      .preload {
+        transition: none !important;
+      }
+      
       .nav__links {
         position: fixed;
-        top: 0;
+        top: 60px;
         left: 0;
         z-index: 2;
         height: 100vh;
@@ -76,54 +75,44 @@
         position: fixed;  /* Parte superior del contenido de la página */
         top: 0;
         left: 0;
-        width: 100vh;      /* Ancho completo o 100% */
+        width: 100vw;      /* Ancho completo o 100% */
         height: 100vh;     /* Altura completa o 100% */
         background-color: rgba(0,0,0,0.5); /* Fondo negro con opacidad */
-        background-filter: blur(2px);
+        backdrop-filter: blur(2px);
         visibility: hidden;   /* Oculto por defecto */
         opacity: 0;
-        /* z-index: 2; Orden de pila en caso de que esté usando un orden diferente para otros elementos */
+        z-index: 1; /* Orden de pila en caso de que esté usando un orden diferente para otros elementos */
         cursor: pointer; /* Puntero al pasar el mouse */
         transition: opacity 0.3s;
       }
 
-      .nav--open .nav__links {
+      .nav--open .nav__overlay {
         visibility: visible;
         opacity: 1;
       }
     </style>
   </head>
-  <body>
-    {{-- <header>
+  <body class="preload">
+    <header>
       @include('layouts.includes.templates._header')
-    </header> --}}
-    <header class="header">
-      <button class="header__button" id="btnNav" type="button">
-          <i class="material-icons">menu</i>
-      </button>
     </header>
     
     <nav class="nav">
       <div class="nav__links">
         <a href="#" class="nav__link">
-            <i class="fa fa-user"></i>
-            Dashboard
+          <i class="fa fa-user"></i>Dashboard
         </a>
         <a class="nav__link nav__link--active" href="#">
-            <i class="fa fa-user"></i>
-            Projects
+          <i class="fa fa-user"></i>Projects
         </a>
         <a class="nav__link" href="#">
-            <i class="fa fa-user"></i>
-            Security
+          <i class="fa fa-user"></i>Security
         </a>
         <a class="nav__link" href="#">
-            <i class="fa fa-user"></i>
-            History
+          <i class="fa fa-user"></i>History
         </a>
         <a class="nav__link" href="#">
-            <i class="fa fa-user"></i>
-            Profile
+          <i class="fa fa-user"></i>Profile
         </a>
       </div>
       <div class="nav__overlay"></div>
@@ -217,7 +206,12 @@
     <!-- JavaScript -->
     <script src="{{ asset('js/app.js') }}" defer></script>
 
+    <!-- https://www.youtube.com/watch?v=yH7gkUNwDJY -->
     <script>
+      window.addEventListener("load", () => {
+        document.body.classList.remove("preload");
+      });
+      
       document.addEventListener("DOMContentLoaded", () => {
         const nav = document.querySelector(".nav");
 
@@ -226,7 +220,7 @@
         });
 
         document.querySelector(".nav__overlay").addEventListener("click", () => {
-          nav.classList.add("nav--open");
+          nav.classList.remove("nav--open");
         });
       });
     </script>
