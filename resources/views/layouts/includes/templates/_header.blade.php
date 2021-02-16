@@ -1,7 +1,10 @@
 <div class="container">
   <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-primary">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#"><i class="fas fa-bars"></i></a>
+      {{-- <a class="navbar-brand" href="#"><i class="fas fa-bars"></i></a> --}}
+      {{-- <a class="navbar-brand" href="#" onclick="toggleMenu()"></a> --}}
+
+      <div class="toggle" onclick="toggleMenu()"></div>
 
       <button
         class="navbar-toggler"
@@ -35,7 +38,7 @@
             </button>
           </form>
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+            <a class="nav-link active" aria-current="page" href="#">Navbar</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Enlace</a>

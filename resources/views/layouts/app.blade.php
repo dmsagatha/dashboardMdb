@@ -128,5 +128,14 @@
 
     <!-- JavaScript -->
     <script src="{{ asset('js/app.js') }}" defer></script>
+
+    <script>
+      function toggleMenu() {
+        let navigation = document.querySelector('.sidebar');
+        let toggle = document.querySelector('.toggle');
+        navigation.classList.toggle('active');
+        toggle.classList.toggle('active');
+      }
+    </script>
   </body>
 </html>
