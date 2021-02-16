@@ -1,44 +1,89 @@
-.navbar-brand {
-  font-size: 24px !important;
-}
 
-.navbar-brand ~ .sidebar {
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: mone;
+}
+.sidebar {
+  position: fixed;
+  left: -240px;
+  width: 240px;
+  height: 100vh;
+  background: #1e1e1e;
+  transition: all .5s ease;
+}
+.sidebar header {
+  color: white;
+  font-size: 28px;
+  line-height: 70px;
+  text-align: center;
+  background: #1b1b1b;
+  user-select: none;
+  font-family: 'Montserrat', sans-serif;
+}
+.sidebar a {
+  display: block;
+  color: white;
+  height: 50px;
+  width: 100%;
+  line-height: 50px;
+  padding-left: 30px;
+  border-bottom: 1px solid rgba(255, 255, 255, .1);
+  border-top: 1px solid black;
+  border-left: 5px solid transparent;
+  box-sizing: border-box;
+  transition: all .5s ease;
+  font-family: 'Open Sans', sans-serif;
+}
+a:hover, a.active {
+  border-left: 5px solid #b93632;
+  color: #b93632;
+}
+.sidebar a i {
+  font-size: 23px;
+  margin-right: 16px;
+}
+.sidebar a span {
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+#check {
+  display: none;
+}
+label #btn, label #cancel {
+  position: absolute;   /* Se super ponen */
+  cursor: pointer;
+  background: #262626;
+  height: 45px;
+  width: 45px;
+  text-align: center;
+  line-height: 45px;
+  color: white;
+  font-size: 29px;
+  border-radius: 5px;
+  margin: 15px 30px;
+  border: 1px solid #262626;
+  transition: all .5s ease;
+}
+label #cancel {
+  opacity: 0;
   visibility: hidden;
 }
-
-.sidebar {
-  height: 100%;
-  width: 200px;
-  margin-left: -200px;
-  background-color: #777;
-  z-index: 10;  /* Permanecer en la cima */
-  overflow-x: hidden;   /* Deshabilitar el desplazamiento horizontal */
-  transition: 0.4s;
+#check:checked ~ label #btn {
+  margin-left: 245px;
+  opacity: 0;
+  visibility: hidden;
+}
+#check:checked ~ label #cancel {
+  margin-left: 245px;
+  opacity: 1;
+  visibility: visible;
+}
+#check:checked ~ .sidebar{
+  left: 0;
 }
 
-.list-group-item {
-  background-color: transparent;
-  color: #ddd;
-}
+/* https://www.youtube.com/watch?v=c5kWKnESUjY&feature=emb_logo
+https://www.codingnepalweb.com/2020/04/responsive-sidebar-menu-html-css.html */
 
-.dropdown-menu {
-  background-color: #7952b3;
-}
-
-.dropdown-item:active,
-.dropdown-item:focus,
-.dropdown-item:hover {
-  background-color: #ffffff26;
-}
-
-.my-container {
-  transition: 0.4s;
-}
-
-.active-nav {
-  margin-left: 0;
-}
-
-.active-cont {
-  margin-left: 200px;
-}
+/* https://www.youtube.com/watch?v=DvpSKoCyN5Q */
