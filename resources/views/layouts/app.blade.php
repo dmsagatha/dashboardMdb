@@ -16,9 +16,91 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/styles.css') }}" rel="stylesheet">
+
+    <style>
+      .container-for-admin {
+        background-color: rgb(255, 255, 255) !important;
+      }
+
+      .container {
+        margin-top: 4rem;
+      }
+
+      .nav-link:hover {
+        color:white !important;
+      }
+
+      .bg-footer {
+        background-color: #0288D1;
+      }
+
+      .unique-color {
+        background-color: #3f729b !important;
+      }
+
+      .sidebar-fixed {
+        position: fixed;
+        height: 100vh;
+        width: 80%;
+        max-width: 300px;
+        left: -300px;
+        top: 0;
+        background: linear-gradient(to right, #673AB7, #5E35B1);
+        z-index: 1050;      /* Capa por encima */
+        background-color: #fff;
+        -webkit-transition: all 0.3s ease;
+                transition: all 0.3s ease;
+        -webkit-box-shadow: 0 2px 5px 0 rgba(0,0,0,.16),0 2px 10px 0 rgba(0,0,0,.12);
+                box-shadow: 0 2px 5px 0 rgba(0,0,0,.16),0 2px 10px 0 rgba(0,0,0,.12);
+      }
+
+      /* https://www.youtube.com/watch?v=DvpSKoCyN5Q - 5' */
+      /* https://akzhy.com/blog/sidenav-using-pure-css */
+      /* ====================================
+        Botón para desplegar el Menú lateral
+      ======================================= */
+      .toggle {
+        display: flex;
+        align-items: center;
+        padding-top: .3rem;
+        padding-bottom: .3rem;
+        margin-right: 1rem;
+        font-size: 2rem;
+        text-decoration: none;
+        white-space: nowrap;
+        color: #fff;
+        cursor: pointer;
+      }
+
+      .toggle:hover, .toggle:focus {
+        color: rgb(236, 225, 225);
+      }
+
+      /* =================================
+        Abrir/cerrar el navegador lateral
+        Capa por encima de toda la página
+      ==================================== */
+      .sideNav-overlay {
+        position: fixed;
+        width: 100vw;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.7);
+        left: 100%;
+        top: 0;
+        z-index: 998;
+        cursor: default;
+      }
+
+      .sidebar-fixed:target {
+        left: 0;
+      }
+
+      .sidebar-fixed:target+.sideNav-overlay {
+        left: 0;
+      }
+    </style>
   </head>
-  <body class="preload">
+  <body class="grey lighten-3">
     <div class="container-for-admin">
       <header>
         @include('layouts.includes.templates._header')
@@ -38,19 +120,11 @@
           <li class="list-group-item">Porta ac consectetur ac</li>
           <li class="list-group-item">Vestibulum at eros</li>
         </ul>
-
-        <a href="#" class="active"><i class="fas fa-qrcode"></i><span>Dashboard</span></a>
-        <a href="#"><i class="fas fa-link"></i><span>Inicio</span></a>
-        <a href="#"><i class="fas fa-stream"></i><span>Usuarios</span></a>
-        <a href="#"><i class="fas fa-calendar"></i><span>Productos</span></a>
-        <a href="#"><i class="far fa-question-circle"></i><span>Pedidos</span></a>
-        <a href="#"><i class="fas fa-sliders-h"></i><span>Facturas</span></a>
-        <a href="#"><i class="far fa-envelope"></i><span>Configuraciones</span></a>
       </div>
 
       <a href="#!" class="close sideNav-overlay"></a>
 
-      <main class="main-content mt-5">
+      <main>
         <div class="container">
           <div class="row mb-4">
             <div class="col-md-6">

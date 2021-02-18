@@ -1,12 +1,8 @@
 <div class="container">
-  <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-primary">
+  <nav class="navbar navbar-expand-lg fixed-top navbar-dark unique-color">
     <div class="container-fluid">
-      {{-- <a class="navbar-brand" href="#"><i class="fas fa-bars"></i></a> --}}
-      {{-- <a class="navbar-brand" href="#" onclick="toggleMenu()"></a> --}}
 
-      <a href="#sideNav" class="toggle open"></a>
-
-      {{-- <div class="toggle" onclick="toggleMenu()"></div> --}}
+      <a href="#sideNav" class="toggle open"><i class="fas fa-list-ul"></i></a>
 
       <button
         class="navbar-toggler"
@@ -20,7 +16,7 @@
         <i class="fas fa-bars"></i>
       </button>
       <!-- Collapsible wrapper -->
-      <div class="collapse navbar-collapse" id="navbarRightAlignExample">
+      <div class="collapse navbar-collapse font-weight-bold" id="navbarRightAlignExample">
         <!-- Left links -->
         <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
           <!-- Search form -->
