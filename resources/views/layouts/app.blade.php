@@ -19,112 +19,124 @@
     <link href="{{ asset('css/styles.css') }}" rel="stylesheet">
   </head>
   <body class="preload">
-    <header>
-      @include('layouts.includes.templates._header')
-    </header>
-    
-    <input type="checkbox" id="check">
-    <label for="check">
-      <i class="fas fa-bars" id="btn"></i>
-      <i class="fas fa-times" id="cancel"></i>
-    </label>
-
-    <div class="sidebar">
-      <header>Mi Menú</header>
-      <a href="#" class="active"><i class="fas fa-qrcode"></i><span>Dashboard</span></a>
-      <a href="#"><i class="fas fa-link"></i><span>Inicio</span></a>
-      <a href="#"><i class="fas fa-stream"></i><span>Usuarios</span></a>
-      <a href="#"><i class="fas fa-calendar"></i><span>Productos</span></a>
-      <a href="#"><i class="far fa-question-circle"></i><span>Pedidos</span></a>
-      <a href="#"><i class="fas fa-sliders-h"></i><span>Facturas</span></a>
-      <a href="#"><i class="far fa-envelope"></i><span>Configuraciones</span></a>
-    </div>
-
-    <main class="main-content mt-5">
-      <div class="container">  
-        <div class="row mb-4">
-          <div class="col-md-6">
-            <img src="https://mdbootstrap.com/img/Photos/Slides/img%20(15).jpg" class="img-fluid shadow-5 rounded" alt="">
-          </div>
-          <div class="col-md-6">
-            <h1>Esta es la primera página</h1>
-            <hr>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem nesciunt aperiam assumenda dolores expedita autem veritatis distinctio vitae, dignissimos optio vel, quidem corrupti corporis aspernatur a. Excepturi dolore itaque illo.
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem nesciunt aperiam assumenda dolores expedita autem veritatis distinctio vitae, dignissimos optio vel, quidem corrupti corporis aspernatur a. Excepturi dolore itaque illo.
-            </p>
-          </div>
-        </div>
+    <div class="container-for-admin">
+      <header>
+        @include('layouts.includes.templates._header')
+      </header>
       
-        <div class="row mb-4">
-          <div class="col-lg-4 col-md-12">
-            <div class="card">
-              <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-                <img
-                  src="https://mdbootstrap.com/img/new/standard/nature/111.jpg"
-                  class="img-fluid"
-                />
-                <a href="#!">
-                  <div class="mask" style="background-color: rgba(251, 251, 251, 0.15)"></div>
-                </a>
-              </div>
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">
-                  Some quick example text to build on the card title and make up the bulk of the
-                  card's content.
-                </p>
-                <a href="#!" class="btn btn-primary">Button</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6">
-            <div class="card">
-              <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-                <img
-                  src="https://mdbootstrap.com/img/new/standard/nature/112.jpg"
-                  class="img-fluid"
-                />
-                <a href="#!">
-                  <div class="mask" style="background-color: rgba(251, 251, 251, 0.15)"></div>
-                </a>
-              </div>
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">
-                  Some quick example text to build on the card title and make up the bulk of the
-                  card's content.
-                </p>
-                <a href="#!" class="btn btn-primary">Button</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6">
-            <div class="card">
-              <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-                <img
-                  src="https://mdbootstrap.com/img/new/standard/nature/113.jpg"
-                  class="img-fluid"
-                />
-                <a href="#!">
-                  <div class="mask" style="background-color: rgba(251, 251, 251, 0.15)"></div>
-                </a>
-              </div>
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">
-                  Some quick example text to build on the card title and make up the bulk of the
-                  card's content.
-                </p>
-                <a href="#!" class="btn btn-primary">Button</a>
-              </div>
-            </div>
-          </div>
+      {{-- <input type="checkbox" id="check">
+      <label for="check">
+        <i class="fas fa-bars" id="btn"></i>
+        <i class="fas fa-times" id="cancel"></i>
+      </label> --}}
+      <div id="sidenav" class="sidebar-fixed position-fixed unique-color">
+        <div class="text-center">
+          <a class="logo-wrapper waves-effect" href="#">
+            <img src="{{ asset('img/carita-feliz.gif') }}" class="img-fluid" alt="" style="width: 25%;">
+          </a>
         </div>
-      </div><!-- Container -->
-    </main>
 
-    <div class="overlay"></div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">Cras justo odio</li>
+          <li class="list-group-item">Dapibus ac facilisis in</li>
+          <li class="list-group-item">Morbi leo risus</li>
+          <li class="list-group-item">Porta ac consectetur ac</li>
+          <li class="list-group-item">Vestibulum at eros</li>
+        </ul>
+
+        <a href="#" class="active"><i class="fas fa-qrcode"></i><span>Dashboard</span></a>
+        <a href="#"><i class="fas fa-link"></i><span>Inicio</span></a>
+        <a href="#"><i class="fas fa-stream"></i><span>Usuarios</span></a>
+        <a href="#"><i class="fas fa-calendar"></i><span>Productos</span></a>
+        <a href="#"><i class="far fa-question-circle"></i><span>Pedidos</span></a>
+        <a href="#"><i class="fas fa-sliders-h"></i><span>Facturas</span></a>
+        <a href="#"><i class="far fa-envelope"></i><span>Configuraciones</span></a>
+      </div>
+      <main class="main-content mt-5">
+        <div class="container">
+          <div class="row mb-4">
+            <div class="col-md-6">
+              <img src="https://mdbootstrap.com/img/Photos/Slides/img%20(15).jpg" class="img-fluid shadow-5 rounded" alt="">
+            </div>
+            <div class="col-md-6">
+              <h1>Esta es la primera página</h1>
+              <hr>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem nesciunt aperiam assumenda dolores expedita autem veritatis distinctio vitae, dignissimos optio vel, quidem corrupti corporis aspernatur a. Excepturi dolore itaque illo.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem nesciunt aperiam assumenda dolores expedita autem veritatis distinctio vitae, dignissimos optio vel, quidem corrupti corporis aspernatur a. Excepturi dolore itaque illo.
+              </p>
+            </div>
+          </div>
+      
+          <div class="row mb-4">
+            <div class="col-lg-4 col-md-12">
+              <div class="card">
+                <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+                  <img
+                    src="https://mdbootstrap.com/img/new/standard/nature/111.jpg"
+                    class="img-fluid"
+                  />
+                  <a href="#!">
+                    <div class="mask" style="background-color: rgba(251, 251, 251, 0.15)"></div>
+                  </a>
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">
+                    Some quick example text to build on the card title and make up the bulk of the
+                    card's content.
+                  </p>
+                  <a href="#!" class="btn btn-primary">Button</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+              <div class="card">
+                <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+                  <img
+                    src="https://mdbootstrap.com/img/new/standard/nature/112.jpg"
+                    class="img-fluid"
+                  />
+                  <a href="#!">
+                    <div class="mask" style="background-color: rgba(251, 251, 251, 0.15)"></div>
+                  </a>
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">
+                    Some quick example text to build on the card title and make up the bulk of the
+                    card's content.
+                  </p>
+                  <a href="#!" class="btn btn-primary">Button</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+              <div class="card">
+                <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+                  <img
+                    src="https://mdbootstrap.com/img/new/standard/nature/113.jpg"
+                    class="img-fluid"
+                  />
+                  <a href="#!">
+                    <div class="mask" style="background-color: rgba(251, 251, 251, 0.15)"></div>
+                  </a>
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">
+                    Some quick example text to build on the card title and make up the bulk of the
+                    card's content.
+                  </p>
+                  <a href="#!" class="btn btn-primary">Button</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div><!-- Container -->
+      </main>
+      <div class="overlay"></div>
+    </div>
 
     @include('layouts.includes.templates._footer')
 
@@ -133,7 +145,7 @@
 
     <script>
       function toggleMenu() {
-        let navigation = document.querySelector('.sidebar');
+        let navigation = document.querySelector('.sidebar-fixed');
         let toggle = document.querySelector('.toggle');
 
         navigation.classList.toggle('active');

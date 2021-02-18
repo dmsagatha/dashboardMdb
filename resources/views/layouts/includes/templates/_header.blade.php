@@ -4,7 +4,9 @@
       {{-- <a class="navbar-brand" href="#"><i class="fas fa-bars"></i></a> --}}
       {{-- <a class="navbar-brand" href="#" onclick="toggleMenu()"></a> --}}
 
-      <div class="toggle" onclick="toggleMenu()"></div>
+      <a href="#sideNav" class="toggle open"></a>
+
+      {{-- <div class="toggle" onclick="toggleMenu()"></div> --}}
 
       <button
         class="navbar-toggler"
