@@ -102,7 +102,7 @@
   </head>
   <body class="preload">
     <header>
-      @include('layouts.includes.templates._header')
+      @include('layouts.includes.templates._header1')
     </header>
     
     <nav class="nav">
@@ -214,7 +214,9 @@
     <!-- JavaScript -->
     <script src="{{ asset('js/app.js') }}" defer></script>
 
-    <!-- https://www.youtube.com/watch?v=yH7gkUNwDJY -->
+    <!-- https://www.youtube.com/watch?v=yH7gkUNwDJY
+      https://codepen.io/dcode-software/pen/GRodxJY
+    -->
     <script>
       window.addEventListener("load", () => {
         document.body.classList.remove("preload");
