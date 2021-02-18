@@ -16,7 +16,214 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/styles.css') }}" rel="stylesheet">
+    
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        text-decoration: mone;
+      }
+      /* .sidebar {
+        position: fixed;
+        left: -240px;
+        width: 240px;
+        height: 100vh;
+        background: #1e1e1e;
+        transition: all .5s ease;
+      } */
+      .sidebar {
+        position: fixed;
+        height: 100vh;
+        width: 0;
+        top: 70px;
+        background: #1e1e1e;
+        transition: all .5s ease;
+        overflow: hidden;
+        z-index: 1050;      /* Capa por encima */
+        -webkit-box-shadow: 0 2px 5px 0 rgba(0,0,0,.16),0 2px 10px 0 rgba(0,0,0,.12);
+                box-shadow: 0 2px 5px 0 rgba(0,0,0,.16),0 2px 10px 0 rgba(0,0,0,.12);
+      }
+      .sidebar.active {
+        width: 300px;
+      }
+      .sidebar header {
+        color: white;
+        font-size: 28px;
+        line-height: 70px;
+        text-align: center;
+        background: #1b1b1b;
+        user-select: none;
+        font-family: 'Montserrat', sans-serif;
+      }
+      .sidebar a {
+        display: block;
+        color: white;
+        height: 50px;
+        width: 100%;
+        line-height: 50px;
+        padding-left: 30px;
+        border-bottom: 1px solid rgba(255, 255, 255, .1);
+        border-top: 1px solid black;
+        border-left: 5px solid transparent;
+        box-sizing: border-box;
+        transition: all .5s ease;
+        font-family: 'Open Sans', sans-serif;
+      }
+      .sidebar a:hover, .sidebar a.active {
+        border-left: 5px solid #b93632;
+        color: #b93632;
+      }
+      .sidebar a i {
+        font-size: 23px;
+        margin-right: 16px;
+      }
+      .sidebar a span {
+        letter-spacing: 1px;
+        text-transform: uppercase;
+      }
+      #check {
+        display: none;
+      }
+      label #btn, label #cancel {
+        position: absolute;   /* Se super ponen */
+        cursor: pointer;
+        background: #262626;
+        height: 45px;
+        width: 45px;
+        text-align: center;
+        line-height: 45px;
+        color: white;
+        font-size: 29px;
+        border-radius: 5px;
+        margin: 15px 30px;
+        border: 1px solid #262626;
+        transition: all .5s ease;
+      }
+      label #cancel {
+        opacity: 0;
+        visibility: hidden;
+      }
+      #check:checked ~ label #btn {
+        margin-left: 245px;
+        opacity: 0;
+        visibility: hidden;
+      }
+      #check:checked ~ label #cancel {
+        margin-left: 245px;
+        opacity: 1;
+        visibility: visible;
+      }
+      #check:checked ~ .sidebar{
+        left: 0;
+      }
+
+      /* https://www.youtube.com/watch?v=c5kWKnESUjY&feature=emb_logo
+      https://www.codingnepalweb.com/2020/04/responsive-sidebar-menu-html-css.html */
+
+      /* https://www.youtube.com/watch?v=DvpSKoCyN5Q - 5' */
+      /* .toggle {
+        position: absolute;
+        top: 0;
+        left: 60px;
+        width: 60px;
+        height: 60px;
+        background: #330748;
+        cursor: pointer;
+      }
+      .toggle:hover {
+        background: #ea1d63;
+      } 
+      .toggle:before {
+        content: '\f0c9';
+        font-family: 'Font Awesome 5 Free';
+        font-weight: 900;
+        font-size: 2rem;
+        width: 100%;
+        height: 100%;
+        line-height: 60px;
+        text-align: center;
+        color: #fff;
+      }
+      .toggle:hover:before {
+        content: '\f00d';
+      } */
+      .toggle {
+        display: flex;
+        align-items: center;
+        padding-top: .3rem;
+        padding-bottom: .3rem;
+        margin-right: 1rem;
+        font-size: 1.25rem;
+        text-decoration: none;
+        white-space: nowrap;
+        color: #fff;
+        cursor: pointer;
+      }
+      .toggle:hover, .toggle:focus {
+        color: #fff;
+      } 
+      .toggle:before {
+        content: '\f0c9';
+        font-family: 'Font Awesome 5 Free';
+        font-weight: 900;
+        font-size: 2rem;
+      }
+      .toggle:hover:before {
+        content: '\f00d';
+      }
+
+      /* .navbar-brand {
+        cursor: pointer;
+      }
+      .navbar-brand:before {
+        content: '\f0c9';
+        font-family: 'Font Awesome 5 Free';
+        font-weight: 900;
+        font-size: 2rem;
+      }
+      .navbar-brand:hover:before {
+        content: '\f00d';
+      } */
+
+
+      /* =================================
+        Capa por encima de toda la página
+      ==================================== */
+      .overlay {
+        display: none;
+        position: fixed;
+        width: 100vw;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.7);
+        z-index: 998;
+        opacity: 0;
+        transition: all 0.5s ease-in-out;
+      }
+
+      .overlay.active {
+        display: block;
+        opacity: 1;
+      }
+
+
+      /* https://codepen.io/jeffersonlam/pen/waxxeR */
+      .sidenav-active .toggle  {
+        background-color: rgba(0,0,0,0.3);
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 100vh;
+        z-index: 5000;
+        transition: background-color .3s, transform 0.3s;
+      }
+      /* c. Prevent body scroll */
+      .noscroll {
+        position: relative;
+        overflow: hidden;
+      }
+    </style>
   </head>
   <body class="preload">
     <header>
