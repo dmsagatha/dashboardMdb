@@ -1,5 +1,5 @@
 .container-for-admin {
-  background-color: white !important;
+  background-color: rgb(255, 255, 255) !important;
 }
 
 .sidebar-fixed {
@@ -10,7 +10,6 @@
   left: -300px;
   top: 0;
   background: linear-gradient(to right, #673AB7, #5E35B1);
-  /* transition: left .35s; */
   z-index: 1050;      /* Capa por encima */
   background-color: #fff;
   -webkit-transition: all 0.3s ease;
