@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
   <head>
@@ -8,275 +7,209 @@
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <link rel="icon" href="{{ asset('images/favicon-32x32.png') }}">
+    <link rel="icon" href="{{ asset('img/favicon.ico') }}">
 
-    <title>{{ config('app.name', 'Laravel Livewire') }}</title>
+    <title>{{ config('app.name', 'Laravel') }}</title>
     
-    <!-- Google Fonts Roboto -->
+    <!-- Google Fonts Roboto --><!-- Font Awesome -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" />
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
+    <style>
+      .container-for-admin {
+        background-color: rgb(255, 255, 255) !important;
+      }
+
+      .container {
+        margin-top: 4rem;
+      }
+
+      .nav-link:hover {
+        color:white !important;
+      }
+
+      .bg-footer {
+        background-color: #0288D1;
+      }
+
+      .unique-color {
+        background-color: #3f729b !important;
+      }
+
+      .sidebar-fixed {
+        position: fixed;
+        height: 100vh;
+        width: 80%;
+        max-width: 300px;
+        left: -300px;
+        top: 0;
+        background: linear-gradient(to right, #673AB7, #5E35B1);
+        z-index: 1050;      /* Capa por encima */
+        background-color: #fff;
+        -webkit-transition: all 0.3s ease;
+                transition: all 0.3s ease;
+        -webkit-box-shadow: 0 2px 5px 0 rgba(0,0,0,.16),0 2px 10px 0 rgba(0,0,0,.12);
+                box-shadow: 0 2px 5px 0 rgba(0,0,0,.16),0 2px 10px 0 rgba(0,0,0,.12);
+      }
+
+      /* https://www.youtube.com/watch?v=DvpSKoCyN5Q - 5' */
+      /* https://akzhy.com/blog/sidenav-using-pure-css */
+      /* ====================================
+        Botón para desplegar el Menú lateral
+      ======================================= */
+      .toggle {
+        display: flex;
+        align-items: center;
+        padding-top: .3rem;
+        padding-bottom: .3rem;
+        margin-right: 1rem;
+        font-size: 2rem;
+        text-decoration: none;
+        white-space: nowrap;
+        color: #fff;
+        cursor: pointer;
+      }
+
+      .toggle:hover, .toggle:focus {
+        color: rgb(236, 225, 225);
+      }
+
+      /* =================================
+        Abrir/cerrar el navegador lateral
+        Capa por encima de toda la página
+      ==================================== */
+      .sideNav-overlay {
+        position: fixed;
+        width: 100vw;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.7);
+        left: 100%;
+        top: 0;
+        z-index: 998;
+        cursor: default;
+      }
+
+      .sidebar-fixed:target {
+        left: 0;
+      }
+
+      .sidebar-fixed:target+.sideNav-overlay {
+        left: 0;
+      }
+    </style>
   </head>
-  <body>
-    <header>
-      <!-- Navbar -->
-      <div class="container">
-        <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-primary">
-          <div class="container-fluid">
-            <a class="navbar-brand" href="#">
-              <img src="images/carita-feliz.gif" height="35" alt="" loading="lazy">
-            </a>
-            <button
-              class="navbar-toggler"
-              type="button"
-              data-mdb-toggle="collapse"
-              data-mdb-target="#navbarRightAlignExample"
-              aria-controls="navbarRightAlignExample"
-              aria-expanded="false"
-              aria-label="Toggle navigation"
-            >
-              <i class="fas fa-bars"></i>
-            </button>
-            <!-- Collapsible wrapper -->
-            <div class="collapse navbar-collapse" id="navbarRightAlignExample">
-              <!-- Left links -->
-              <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                <!-- Search form -->
-                <form class="d-flex input-group w-auto">
-                  <input
-                    type="search"
-                    class="form-control"
-                    placeholder="Type query"
-                    aria-label="Search"
+  <body class="grey lighten-3">
+    <div class="container-for-admin">
+      <header>
+        @include('layouts.includes.templates._header')
+      </header>
+      
+      <div id="sideNav" class="sidebar-fixed position-fixed unique-color">
+        <div class="text-center">
+          <a class="logo-wrapper waves-effect" href="#">
+            <img src="{{ asset('img/carita-feliz.gif') }}" class="img-fluid" alt="" style="width: 25%;">
+          </a>
+        </div>
+
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">Cras justo odio</li>
+          <li class="list-group-item">Dapibus ac facilisis in</li>
+          <li class="list-group-item">Morbi leo risus</li>
+          <li class="list-group-item">Porta ac consectetur ac</li>
+          <li class="list-group-item">Vestibulum at eros</li>
+        </ul>
+      </div>
+
+      <a href="#!" class="close sideNav-overlay"></a>
+
+      <main>
+        <div class="container">
+          <div class="row mb-4">
+            <div class="col-md-6">
+              <img src="https://mdbootstrap.com/img/Photos/Slides/img%20(15).jpg" class="img-fluid shadow-5 rounded" alt="">
+            </div>
+            <div class="col-md-6">
+              <h1>Esta es la primera página</h1>
+              <hr>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem nesciunt aperiam assumenda dolores expedita autem veritatis distinctio vitae, dignissimos optio vel, quidem corrupti corporis aspernatur a. Excepturi dolore itaque illo.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem nesciunt aperiam assumenda dolores expedita autem veritatis distinctio vitae, dignissimos optio vel, quidem corrupti corporis aspernatur a. Excepturi dolore itaque illo.
+              </p>
+            </div>
+          </div>
+      
+          <div class="row mb-4">
+            <div class="col-lg-4 col-md-12">
+              <div class="card">
+                <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+                  <img
+                    src="https://mdbootstrap.com/img/new/standard/nature/111.jpg"
+                    class="img-fluid"
                   />
-                  <button
-                    class="btn btn-outline-primary"
-                    type="button"
-                    data-mdb-ripple-color="dark"
-                  >
-                    Search
-                  </button>
-                </form>
-                <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="#">Inicio</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Enlace</a>
-                </li>
-                <!-- Navbar dropdown -->
-                <li class="nav-item dropdown">
-                  <a
-                    class="nav-link dropdown-toggle"
-                    href="#"
-                    id="navbarDropdown"
-                    role="button"
-                    data-mdb-toggle="dropdown"
-                    aria-expanded="false"
-                  >
-                    Desplegable
+                  <a href="#!">
+                    <div class="mask" style="background-color: rgba(251, 251, 251, 0.15)"></div>
                   </a>
-                  <!-- Dropdown menu -->
-                  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <li><a class="dropdown-item" href="#">Acción</a></li>
-                    <li><a class="dropdown-item" href="#">Otra acción</a></li>
-                    <li><hr class="dropdown-divider" /></li>
-                    <li>
-                      <a class="dropdown-item" href="#">Algo mas aqui</a>
-                    </li>
-                  </ul>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true"
-                    >Deshabilitado</a
-                  >
-                </li>
-                <!-- Avatar -->
-                <li class="nav-item dropdown">
-                  <a
-                    class="nav-link dropdown-toggle d-flex align-items-center"
-                    href="#"
-                    id="navbarDropdownMenuLink"
-                    role="button"
-                    data-mdb-toggle="dropdown"
-                    aria-expanded="false"
-                  >
-                    <img
-                      src="https://mdbootstrap.com/img/Photos/Avatars/img (31).jpg"
-                      class="rounded-circle"
-                      height="22"
-                      alt=""
-                      loading="lazy"
-                    />
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">
+                    Some quick example text to build on the card title and make up the bulk of the
+                    card's content.
+                  </p>
+                  <a href="#!" class="btn btn-primary">Button</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+              <div class="card">
+                <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+                  <img
+                    src="https://mdbootstrap.com/img/new/standard/nature/112.jpg"
+                    class="img-fluid"
+                  />
+                  <a href="#!">
+                    <div class="mask" style="background-color: rgba(251, 251, 251, 0.15)"></div>
                   </a>
-                  <ul class="dropdown-menu dropdown-menu-lg-end" aria-labelledby="navbarDropdownMenuLink">
-                    <li><a class="dropdown-item" href="#">Mi perfil</a></li>
-                    <li><a class="dropdown-item" href="#">Configuraciones</a></li>
-                    <li><a class="dropdown-item" href="#">Cerrar sesión</a></li>
-                  </ul>
-                </li>
-              </ul><!-- Left links -->
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">
+                    Some quick example text to build on the card title and make up the bulk of the
+                    card's content.
+                  </p>
+                  <a href="#!" class="btn btn-primary">Button</a>
+                </div>
+              </div>
             </div>
-            <!-- Collapsible wrapper -->
+            <div class="col-lg-4 col-md-6">
+              <div class="card">
+                <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+                  <img
+                    src="https://mdbootstrap.com/img/new/standard/nature/113.jpg"
+                    class="img-fluid"
+                  />
+                  <a href="#!">
+                    <div class="mask" style="background-color: rgba(251, 251, 251, 0.15)"></div>
+                  </a>
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">
+                    Some quick example text to build on the card title and make up the bulk of the
+                    card's content.
+                  </p>
+                  <a href="#!" class="btn btn-primary">Button</a>
+                </div>
+              </div>
+            </div>
           </div>
-          <!-- Container wrapper -->
-        </nav>
-      </div><!-- Navbar -->
-    </header>
+        </div><!-- Container -->
+      </main>
+    </div>
 
-    <main class="mt-5">
-      <div class="container">
-        <div class="row mb-4">
-          <div class="col-md-6">
-            <img src="https://mdbootstrap.com/img/Photos/Slides/img%20(15).jpg" class="img-fluid shadow-5 rounded" alt="">
-          </div>
-          <div class="col-md-6">
-            <h1>Esta es la primera página</h1>
-            <hr>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem nesciunt aperiam assumenda dolores expedita autem veritatis distinctio vitae, dignissimos optio vel, quidem corrupti corporis aspernatur a. Excepturi dolore itaque illo.
-            </p>
-          </div>
-        </div>
-
-        <div class="row mb-4">
-          <div class="col-lg-4 col-md-12">
-            <div class="card">
-              <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-                <img
-                  src="https://mdbootstrap.com/img/new/standard/nature/111.jpg"
-                  class="img-fluid"
-                />
-                <a href="#!">
-                  <div class="mask" style="background-color: rgba(251, 251, 251, 0.15)"></div>
-                </a>
-              </div>
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">
-                  Some quick example text to build on the card title and make up the bulk of the
-                  card's content.
-                </p>
-                <a href="#!" class="btn btn-primary">Button</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6">
-            <div class="card">
-              <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-                <img
-                  src="https://mdbootstrap.com/img/new/standard/nature/112.jpg"
-                  class="img-fluid"
-                />
-                <a href="#!">
-                  <div class="mask" style="background-color: rgba(251, 251, 251, 0.15)"></div>
-                </a>
-              </div>
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">
-                  Some quick example text to build on the card title and make up the bulk of the
-                  card's content.
-                </p>
-                <a href="#!" class="btn btn-primary">Button</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6">
-            <div class="card">
-              <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-                <img
-                  src="https://mdbootstrap.com/img/new/standard/nature/113.jpg"
-                  class="img-fluid"
-                />
-                <a href="#!">
-                  <div class="mask" style="background-color: rgba(251, 251, 251, 0.15)"></div>
-                </a>
-              </div>
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">
-                  Some quick example text to build on the card title and make up the bulk of the
-                  card's content.
-                </p>
-                <a href="#!" class="btn btn-primary">Button</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div><!-- Container -->
-    </main>
-
-    <footer class="bg-primary text-white text-center text-lg-start">
-      <!-- Grid container -->
-      <div class="container p-4">
-        <!--Grid row-->
-        <div class="row">
-          <!--Grid column-->
-          <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
-            <h5 class="text-uppercase">Footer Content</h5>
-    
-            <p>
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste atque ea quis
-              molestias. Fugiat pariatur maxime quis culpa corporis vitae repudiandae aliquam
-              voluptatem veniam, est atque cumque eum delectus sint!
-            </p>
-          </div>
-          <!--Grid column-->
-    
-          <!--Grid column-->
-          <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-            <h5 class="text-uppercase">Links</h5>
-    
-            <ul class="list-unstyled mb-0">
-              <li>
-                <a href="#!" class="text-white">Link 1</a>
-              </li>
-              <li>
-                <a href="#!" class="text-white">Link 2</a>
-              </li>
-              <li>
-                <a href="#!" class="text-white">Link 3</a>
-              </li>
-              <li>
-                <a href="#!" class="text-white">Link 4</a>
-              </li>
-            </ul>
-          </div>
-          <!--Grid column-->
-    
-          <!--Grid column-->
-          <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-            <h5 class="text-uppercase mb-0">Links</h5>
-    
-            <ul class="list-unstyled">
-              <li>
-                <a href="#!" class="text-white">Link 1</a>
-              </li>
-              <li>
-                <a href="#!" class="text-white">Link 2</a>
-              </li>
-              <li>
-                <a href="#!" class="text-white">Link 3</a>
-              </li>
-              <li>
-                <a href="#!" class="text-white">Link 4</a>
-              </li>
-            </ul>
-          </div>
-          <!--Grid column-->
-        </div>
-        <!--Grid row-->
-      </div>
-      <!-- Grid container -->
-    
-      <!-- Copyright -->
-      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
-        © 2020 Copyright:
-        <a class="text-white" href="https://mdbootstrap.com/">MDBootstrap.com</a>
-      </div>
-      <!-- Copyright -->
-    </footer>
+    @include('layouts.includes.templates._footer')
 
     <!-- JavaScript -->
     <script src="{{ asset('js/app.js') }}" defer></script>
