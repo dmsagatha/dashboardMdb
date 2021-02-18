@@ -24,12 +24,7 @@
         @include('layouts.includes.templates._header')
       </header>
       
-      {{-- <input type="checkbox" id="check">
-      <label for="check">
-        <i class="fas fa-bars" id="btn"></i>
-        <i class="fas fa-times" id="cancel"></i>
-      </label> --}}
-      <div id="sidenav" class="sidebar-fixed position-fixed unique-color">
+      <div id="sideNav" class="sidebar-fixed position-fixed unique-color">
         <div class="text-center">
           <a class="logo-wrapper waves-effect" href="#">
             <img src="{{ asset('img/carita-feliz.gif') }}" class="img-fluid" alt="" style="width: 25%;">
@@ -52,6 +47,9 @@
         <a href="#"><i class="fas fa-sliders-h"></i><span>Facturas</span></a>
         <a href="#"><i class="far fa-envelope"></i><span>Configuraciones</span></a>
       </div>
+
+      <a href="#!" class="close sideNav-overlay"></a>
+
       <main class="main-content mt-5">
         <div class="container">
           <div class="row mb-4">
@@ -135,22 +133,11 @@
           </div>
         </div><!-- Container -->
       </main>
-      <div class="overlay"></div>
     </div>
 
     @include('layouts.includes.templates._footer')
 
     <!-- JavaScript -->
     <script src="{{ asset('js/app.js') }}" defer></script>
-
-    <script>
-      function toggleMenu() {
-        let navigation = document.querySelector('.sidebar-fixed');
-        let toggle = document.querySelector('.toggle');
-
-        navigation.classList.toggle('active');
-        toggle.classList.toggle('active');
-      }
-    </script>
   </body>
 </html>
