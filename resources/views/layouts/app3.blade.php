@@ -11,21 +11,21 @@
 
     <title>{{ config('app.name', 'Laravel') }}</title>
     
-    <!-- Google Fonts Roboto -->
+    <!-- Google Fonts Roboto --><!-- Font Awesome -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" />
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/styles.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/styles3.css') }}" rel="stylesheet">
   </head>
   <body>
     <div class="container-for-admin">
       <header>
-        @include('layouts.includes.templates._header')
+        @include('layouts.includes.templates._header3')
       </header>
 
       <!-- Sidebar  -->
-      @include('layouts.includes.templates._sideNav')
+      @include('layouts.includes.templates._sideNav3')
 
       <main>
         <div class="container">

@@ -1,4 +1,4 @@
-<div class="sidebar-fixed position-fixed unique-color" id="sideNav">
+<div id="sideNav" class="sidebar-fixed position-fixed unique-color">
   <div class="text-center">
     <a class="logo-wrapper waves-effect" href="#">
       <img src="{{ asset('img/carita-feliz.gif') }}" class="img-fluid" alt="" style="width: 50%;">

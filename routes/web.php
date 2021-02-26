@@ -11,6 +11,6 @@ Route::get('/app1', function () {
 Route::get('/app2', function () {
     return view('layouts.app2');
 });
-/* Route::get('/app3', function () {
+Route::get('/app3', function () {
     return view('layouts.app3');
-}); */
+});

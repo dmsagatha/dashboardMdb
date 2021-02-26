@@ -4,10 +4,6 @@
 
       <a href="#sideNav" class="toggle open"><i class="fas fa-list-ul"></i></a>
 
-      <div class="header__toggle">
-        <i class="fas fa-list-ul"></i>
-      </div>
-
       <button
         class="navbar-toggler"
         type="button"
