@@ -20,7 +20,7 @@
   align-items: center;
   padding-top: .3rem;
   padding-bottom: .3rem;
-  margin-left: 10rem;
+  margin-left: 20rem;
   font-size: 2rem;
   text-decoration: none;
   white-space: nowrap;
@@ -28,26 +28,70 @@
   cursor: pointer;
 }
 
-
-
-
-
-
-
+/*========== SIDENAV ==========*/
 .sidebar-fixed {
   position: fixed;
-  height: 100vh;
-  width: 80%;
-  max-width: 300px;
-  left: -300px;
   top: 0;
-  z-index: 1050;      /* Capa por encima */
+  left: 0;
+  height: 100vh;
   background-color: #fff;
   -webkit-transition: all 0.3s ease;
           transition: all 0.3s ease;
   -webkit-box-shadow: 0 2px 5px 0 rgba(0,0,0,.16),0 2px 10px 0 rgba(0,0,0,.12);
           box-shadow: 0 2px 5px 0 rgba(0,0,0,.16),0 2px 10px 0 rgba(0,0,0,.12);
+  z-index: 1050;      /* Capa por encima */
+  transition: .4s;
 }
+
+/* .sidebar-container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: auto;
+  scrollbar-width: none;
+}
+
+.sidebar-container::-webkit-scrollbar {
+  display: none;
+} */
+
+.sidebar-container {
+  scrollbar-width: none;    /* Para mozilla */
+}
+
+.sidebar-container::-webkit-scrollbar {
+  display: none;    /* Para Google Chrome y otros */
+}
+
+.sidebar-icon {
+  font-size: 1.2rem;
+  margin-right: .5rem;
+}
+
+/* Dropdown */
+.sidebar-dropdown {
+  overflow: hidden;
+  max-height: 41px;
+  transition: .4s ease-in-out;
+}
+
+.sidebar-dropdown-icon {
+  margin-left: auto;    /* REVISAR */
+}
+
+/* Mostrar el submenú colapsado - Oculta los demás submenús */
+.sidebar-dropdown:hover {
+  max-height: 100rem;
+}
+
+/* Rotar la flecha del icono */
+.sidebar-dropdown:hover .sidebar-dropdown-icon {
+  transform: rotate(180deg);
+}
+
+
+
 
 /* https://www.youtube.com/watch?v=DvpSKoCyN5Q - 5' */
 /* https://akzhy.com/blog/sidenav-using-pure-css */
@@ -124,19 +168,18 @@
   background-color: white;
 }
 
-.sidebar-fixed .list-group .sidebar-dropdown > a::after {
+/* .sidebar-fixed .list-group .sidebar-dropdown > a::after {
   position: absolute;
   font-family: 'Font Awesome 5 Free';
-  content: "\f078";   /* fa-chevron-down */
+  content: "\f078";
   font-weight: 900;
   font-size: 1rem;
   right: 1rem;
 } 
 
 .sidebar-fixed .list-group .sidebar-dropdown > a[aria-expanded='true']::after {
-  content: "\f077";   /* fa-chevron-up */
-}
-ç
+  content: "\f077";
+} */
 
 
 /* ----------------------------------------------------------------------

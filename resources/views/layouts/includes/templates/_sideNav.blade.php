@@ -1,62 +1,51 @@
 <div class="sidebar-fixed position-fixed unique-color" id="sideNav">
-  <div class="text-center">
-    <a class="logo-wrapper waves-effect" href="#">
-      <img src="{{ asset('img/carita-feliz.gif') }}" class="img-fluid" alt="" style="width: 50%;">
-    </a>
-  </div>
+  <nav class="sidebar-container">
+  	<div class="text-center">
+  	  <a class="logo-wrapper waves-effect" href="#">
+  	    <img src="{{ asset('img/carita-feliz.gif') }}" class="img-fluid" alt="" style="width: 50%;">
+  	  </a>
+  	</div>
 
-  <ul class="list-group list-group-flush">
-    <li class="list-group-item list-group-item-action">Lista 1</li>
-    <li class="list-group-item list-group-item-action">Lista 2</li>
-    <li class="list-group-item list-group-item-action">Lista 3</li>
-    <li class="list-group-item list-group-item-action">Lista 4</li>
-    <li class="list-group-item list-group-item-action">Lista 5</li>
-  </ul>
+    <div class="list-group list-group-flush">
+      <a href="#" class="list-group-item list-group-item-action active" aria-current="true"><i class="fab fa-android sidebar-icon"></i>Enlace 1</a>
+      <a href="#" class="list-group-item list-group-item-action"><i class="fas fa-camera sidebar-icon"></i>Enlace 2</a>
 
-  <div class="list-group list-group-flush">
-    <a href="#" class="list-group-item active waves-effect">
-      <i class="fas fa-chart-pie mr-3"></i>Panel de Control
-    </a>
-    <a href="#" class="list-group-item list-group-item-action waves-effect">
-      <i class="fas fa-user mr-3"></i>Perfil
-    </a>
-
-    <div class="sidebar-dropdown">
       <div class="sidebar-dropdown">
-        <a 
-          href="#" 
-          class="list-group-item list-group-item-action waves-effect collapsed" 
-          data-toggle="collapse" 
-          data-target="#reports" 
-          aria-expanded="false">
-          <i class="fas fa-file-import green-text mr-3"></i>Reportes
+        <a href="#" class="list-group-item list-group-item-action">
+          <i class="fas fa-file-import text-success sidebar-icon"></i>Menú 1
+          <i class="fas fa-chevron-down sidebar-icon sidebar-dropdown-icon"></i>
         </a>
-      </div>
-      <div class="collapse" id="reports" data-parent="#sideNav">
-        <a class="list-group-item list-group-item-action waves-effect" href="#">
-          <i class="fas fa-desktop mr-2 ml-3"></i>Areas
-        </a>
-      </div>
-    </div><!-- sidebar-dropdown reports -->
 
-    <div class="sidebar-dropdown">
+        <div class="sidebar-dropdown-collapse">
+  	      <div class="sidebar-dropdown-content">
+            <a class="list-group-item list-group-item-action" href="#">&nbsp; &nbsp; Areas</a>
+            <a class="list-group-item list-group-item-action" href="#">&nbsp; &nbsp; Categorías</a>
+            <a class="list-group-item list-group-item-action" href="#">&nbsp; &nbsp; Productos</a>
+          </div>
+        </div>
+      </div>
+
+      <a href="#" class="list-group-item list-group-item-action"><i class="fas fa-code sidebar-icon"></i>Enlace 3</a>
+      <a href="#" class="list-group-item list-group-item-action"><i class="fab fa-linux sidebar-icon"></i>Enlace 4</a>
+
       <div class="sidebar-dropdown">
-        <a 
-          href="#" 
-          class="list-group-item list-group-item-action waves-effect collapsed" 
-          data-toggle="collapse" 
-          data-target="#imports" 
-          aria-expanded="false">
-          <i class="fas fa-flist-ul text-danger mr-3"></i>Importaciones
+        <a href="#" class="list-group-item list-group-item-action">
+          <i class="fas fa-file-import text-success sidebar-icon"></i>Menú 2
+          <i class="fas fa-chevron-down sidebar-icon sidebar-dropdown-icon"></i>
         </a>
+
+        <div class="sidebar-dropdown-collapse">
+  	      <div class="sidebar-dropdown-content">
+            <a class="list-group-item list-group-item-action" href="#">&nbsp; &nbsp; Pedidos</a>
+            <a class="list-group-item list-group-item-action" href="#">&nbsp; &nbsp; Facturas</a>
+            <a class="list-group-item list-group-item-action" href="#">&nbsp; &nbsp; Cuentas de Cobro</a>
+          </div>
+        </div>
       </div>
-      <div class="collapse" id="imports" data-parent="#sideNav">
-        <a class="list-group-item list-group-item-action waves-effect" href="#">
-          <i class="fas fa-desktop mr-2 ml-3"></i>Areas
-        </a>
-      </div>
-    </div><!-- sidebar-dropdown imports -->
-  </div>
+
+      <a href="#" class="list-group-item list-group-item-action"><i class="fas fa-tasks sidebar-icon"></i>Enlace 5</a>
+    </div>
+  </nav>
 </div>
 
 <a href="#!" class="close sideNav-overlay"></a>
