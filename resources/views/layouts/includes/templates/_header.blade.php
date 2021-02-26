@@ -5,7 +5,7 @@
       <a href="#sideNav" class="toggle open"><i class="fas fa-list-ul"></i></a>
 
       <div class="header__toggle">
-        <i class="fas fa-list-ul"></i>
+        <i class="fas fa-list-ul" id="header-toggle"></i>
       </div>
 
       <button

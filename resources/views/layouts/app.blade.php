@@ -116,5 +116,25 @@
 
     <!-- JavaScript -->
     <script src="{{ asset('js/app.js') }}" defer></script>
+
+    <!-- Responsive Sidebar Menu With SubMenu Using HTML CSS And JavaScript - https://www.youtube.com/watch?v=PUmmi4O3_5I -->
+    <!-- Mostrar el SIDEBAR -->
+    <script>
+      const showMenu = (headerToggle, navbarId) => {
+        const toggleBtn = document.getElementById(headerToggle),
+        nav = document.getElementById(navbarId)
+        
+        <!-- Validar que existan las variables -->
+        if(headerToggle && navbarId) {
+          toggleBtn.addEventListener('click', () => {
+            <!-- Agregar la clase show-menu a la etiqueta div con la clase nav__menu -->
+            nav.classList.toggle('show-menu')
+            <!-- Cambiar el icono -->
+            toggleBtn.classList.toggle('bx-x')
+          })
+        }
+      }
+      showMenu('header-toggle', 'sideNav')
+    </script>
   </body>
 </html>

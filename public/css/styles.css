@@ -28,11 +28,15 @@
   cursor: pointer;
 }
 
+.header__toggle:hover, .header__toggle:focus {
+  color: rgb(236, 225, 225);
+}
+
 /*========== SIDENAV ==========*/
 .sidebar-fixed {
   position: fixed;
   top: 0;
-  left: 0;
+  left: -100%;
   height: 100vh;
   background-color: #fff;
   -webkit-transition: all 0.3s ease;
@@ -42,19 +46,6 @@
   z-index: 1050;      /* Capa por encima */
   transition: .4s;
 }
-
-/* .sidebar-container {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  overflow: auto;
-  scrollbar-width: none;
-}
-
-.sidebar-container::-webkit-scrollbar {
-  display: none;
-} */
 
 .sidebar-container {
   scrollbar-width: none;    /* Para mozilla */
@@ -78,6 +69,7 @@
 
 .sidebar-dropdown-icon {
   margin-left: auto;    /* REVISAR */
+  transition: .4s;
 }
 
 /* Mostrar el submenú colapsado - Oculta los demás submenús */
@@ -88,6 +80,16 @@
 /* Rotar la flecha del icono */
 .sidebar-dropdown:hover .sidebar-dropdown-icon {
   transform: rotate(180deg);
+}
+
+/* Mostrar el menú lateral y cambiar el icono con JavaScript */
+.show-menu {
+  left: 0;
+}
+
+/* Activar el enlace */
+.active {
+  color: var(--first-color);
 }
 
 
