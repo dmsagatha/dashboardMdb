@@ -130,7 +130,7 @@
             <!-- Agregar la clase show-menu a la etiqueta div con la clase nav__menu -->
             nav.classList.toggle('show-menu')
             <!-- Cambiar el icono -->
-            toggleBtn.classList.toggle('bx-x')
+            toggleBtn.classList.toggle('fa-times')
           })
         }
       }

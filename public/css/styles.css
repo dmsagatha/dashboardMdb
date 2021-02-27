@@ -20,7 +20,6 @@
   align-items: center;
   padding-top: .3rem;
   padding-bottom: .3rem;
-  margin-left: 20rem;
   font-size: 2rem;
   text-decoration: none;
   white-space: nowrap;
@@ -55,91 +54,6 @@
   display: none;    /* Para Google Chrome y otros */
 }
 
-.sidebar-icon {
-  font-size: 1.2rem;
-  margin-right: .5rem;
-}
-
-/* Dropdown */
-.sidebar-dropdown {
-  overflow: hidden;
-  max-height: 41px;
-  transition: .4s ease-in-out;
-}
-
-.sidebar-dropdown-icon {
-  margin-left: auto;    /* REVISAR */
-  transition: .4s;
-}
-
-/* Mostrar el submenú colapsado - Oculta los demás submenús */
-.sidebar-dropdown:hover {
-  max-height: 100rem;
-}
-
-/* Rotar la flecha del icono */
-.sidebar-dropdown:hover .sidebar-dropdown-icon {
-  transform: rotate(180deg);
-}
-
-/* Mostrar el menú lateral y cambiar el icono con JavaScript */
-.show-menu {
-  left: 0;
-}
-
-/* Activar el enlace */
-.active {
-  color: var(--first-color);
-}
-
-
-
-
-/* https://www.youtube.com/watch?v=DvpSKoCyN5Q - 5' */
-/* https://akzhy.com/blog/sidenav-using-pure-css */
-/* ====================================
-  Botón para desplegar el Menú lateral
-======================================= */
-.toggle {
-  display: flex;
-  align-items: center;
-  padding-top: .3rem;
-  padding-bottom: .3rem;
-  margin-right: 1rem;
-  font-size: 2rem;
-  text-decoration: none;
-  white-space: nowrap;
-  color: #fff;
-  cursor: pointer;
-}
-
-.toggle:hover, .toggle:focus {
-  color: rgb(236, 225, 225);
-}
-
-/* =================================
-  Abrir/cerrar el navegador lateral
-  Capa por encima de toda la página
-==================================== */
-.sideNav-overlay {
-  position: fixed;
-  width: 100vw;
-  height: 100vh;
-  background: rgba(0, 0, 0, 0.7);
-  left: 100%;
-  top: 0;
-  z-index: 998;
-  cursor: default;
-}
-
-.sidebar-fixed:target {
-  left: 0;
-}
-
-.sidebar-fixed:target+.sideNav-overlay {
-  left: 0;
-}
-
 /* ---------------------------------------------------------
     SubMenus de la barra lateral
     Slide-Out Navigation Menu - 
@@ -170,97 +84,62 @@
   background-color: white;
 }
 
-/* .sidebar-fixed .list-group .sidebar-dropdown > a::after {
-  position: absolute;
-  font-family: 'Font Awesome 5 Free';
-  content: "\f078";
-  font-weight: 900;
-  font-size: 1rem;
-  right: 1rem;
-} 
+.sidebar-icon {
+  font-size: 1.2rem;
+  margin-right: .5rem;
+}
 
-.sidebar-fixed .list-group .sidebar-dropdown > a[aria-expanded='true']::after {
-  content: "\f077";
-} */
+/* Dropdown */
+.sidebar-dropdown {
+  overflow: hidden;
+  max-height: 41px;
+  transition: .50s ease-in-out;
+}
 
-
-/* ----------------------------------------------------------------------
-  Menú de Navegación Lateral Deslizable
-  https://www.templatemonster.com/blog/build-navigation-menu-css-jquery/
----------------------------------------------------------------------- */
-.toggle-button {
+.sidebar-dropdown-icon {
   position: relative;
-  width: 44px;
-  height: 40px;
-  padding: 4px;
-  z-index: 15;
-  -webkit-transition: 0.25s;
-     -moz-transition: 0.25s;
-       -o-transition: 0.25s;
-          transition: 0.25s;
+  transition: .4s;
 }
 
-.toggle-button .menu-bar-top {
-  border: 4px solid rgb(209, 162, 60);
-  border-bottom: none;
+/* Mostrar el submenú colapsado - Oculta los demás submenús */
+.sidebar-dropdown:hover {
+  max-height: 100rem;
+}
+
+/* Rotar la flecha del icono */
+.sidebar-dropdown:hover .sidebar-dropdown-icon {
+  transform: rotate(180deg);
+}
+
+/* Mostrar el menú lateral y cambiar el icono con JavaScript */
+.show-menu {
+  left: 0;
+}
+
+/* Activar el enlace */
+.active {
+  color: var(--first-color);
+}
+
+/* =================================
+  Abrir/cerrar el navegador lateral
+  Capa por encima de toda la página
+==================================== */
+.sideNav-overlay {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.7);
+  left: 100%;
   top: 0;
+  z-index: 998;
+  cursor: default;
 }
 
-.toggle-button .menu-bar-middle {
-  height: 4px;
-  background-color: rgb(209, 162, 60);
-  margin-top: 7px;
-  margin-bottom: 7px;
-  top: 4px;
+.sidebar-fixed:target {
+  left: 0;
 }
 
-.toggle-button .menu-bar-bottom {
-  border: 4px solid rgb(209, 162, 60);
-  border-top: none;
-  top: 22px;
-}
-
-.toggle-button:hover {
-  cursor: pointer;
-}
-
-.toggle-button .menu-bar {
-  position: absolute;
-  border-radius: 2px;
-  width: 80%;
-  -webkit-transition: 0.5s;
-     -moz-transition: 0.5s;
-       -o-transition: 0.5s;
-          transition: 0.5s;
-}
-
-.button-open .menu-bar-top {
-  transform: rotate(45deg) translate(8px, 8px);
-  -webkit-transition: 0.5s;
-     -moz-transition: 0.5s;
-       -o-transition: 0.5s;
-  transition: .5s;
-}
-
-.button-open .menu-bar-middle {
-  -webkit-transform: translate(230px);
-     -moz-transform: translate(230px);
-       -o-transform: translate(230px);
-          transform: translate(230px);
-  -webkit-transition: 0.1s ease-in;
-     -moz-transition: 0.1s ease-in;
-       -o-transition: 0.1s ease-in;
-          transition: 0.1s ease-in;
-  opacity: 0;
-}
-
-.button-open .menu-bar-bottom {
-  -webkit-transform: rotate(-45deg) translate(8px, -7px);
-     -moz-transform: rotate(-45deg) translate(8px, -7px);
-       -o-transform: rotate(-45deg) translate(8px, -7px);
-          transform: rotate(-45deg) translate(8px, -7px);
-  -webkit-transition: 0.5s;
-     -moz-transition: 0.5s;
-       -o-transition: 0.5s;
-          transition: 0.5s;
+.sidebar-fixed:target+.sideNav-overlay {
+  left: 0;
 }

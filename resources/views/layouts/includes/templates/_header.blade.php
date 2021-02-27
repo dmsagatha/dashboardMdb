@@ -2,11 +2,15 @@
   <nav class="navbar navbar-expand-lg fixed-top navbar-dark unique-color">
     <div class="container-fluid">
 
-      <a href="#sideNav" class="toggle open"><i class="fas fa-list-ul"></i></a>
-
-      <div class="header__toggle">
+      {{-- <div class="header__toggle">
         <i class="fas fa-list-ul" id="header-toggle"></i>
-      </div>
+      </div> --}}
+
+      {{-- <div class="header__toggle">
+        <a href="#sideNav" class="header__toggle open"><i class="fas fa-list-ul" id="header-toggle"></i></a>
+      </div> --}}
+
+      <a href="#sideNav" class="header__toggle"><i class="fas fa-list-ul"></i></a>
 
       <button
         class="navbar-toggler"
@@ -19,6 +23,7 @@
       >
         <i class="fas fa-bars"></i>
       </button>
+
       <!-- Collapsible wrapper -->
       <div class="collapse navbar-collapse font-weight-bold" id="navbarRightAlignExample">
         <!-- Left links -->
@@ -97,9 +102,7 @@
             </ul>
           </li>
         </ul><!-- Left links -->
-      </div>
-      <!-- Collapsible wrapper -->
-    </div>
-    <!-- Container wrapper -->
+      </div><!-- Collapsible wrapper -->
+    </div><!-- Container-fluid -->
   </nav>
 </div>
